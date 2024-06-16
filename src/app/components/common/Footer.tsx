@@ -6,13 +6,17 @@ import LogoHorizontal from "./LogoHorizontal";
 function Footer() {
   return (
     <footer className="pt-16 md:mx-32 mx-5 text-zinc-500 tracking-wide leading-loose">
+      <hr />
       <nav className="px-5">
         <ul className="grid md:grid-cols-5 gap-4 grid-cols-1">
           <li className="md:col-span-2">
             <span className="font-bold text-lg">Contactanos</span>
             <ul>
               <li>
-                Escribenos - <a className="font-medium text-violet-600 underline" href="#">hola@kedevs.com</a>
+                Escribenos -{" "}
+                <a className="font-medium text-violet-600 underline" href="#">
+                  hola@kedevs.com
+                </a>
               </li>
               <li>
                 Llamanos - <span>96521424</span>
@@ -21,45 +25,53 @@ function Footer() {
                 Whatsapp - <span className="font-medium">96521424</span>
               </li>
               <li>
-              <a href="#" className="text-blue-600 font-medium underline">Facebook</a>
+                <a href="#" className="text-blue-600 font-medium underline">
+                  Facebook
+                </a>
               </li>
               <li>
-                <a href="#" className="text-blue-600 font-medium underline">Linkedin</a>
+                <a href="#" className="text-blue-600 font-medium underline">
+                  Linkedin
+                </a>
               </li>
               <li>
-                <a href="#" className="text-black font-medium underline">twitter</a>
+                <a href="#" className="text-black font-medium underline">
+                  twitter
+                </a>
               </li>
               <li>
-                <a href="#" className="text-rose-600 font-medium underline">Instagram</a>
+                <a href="#" className="text-rose-600 font-medium underline">
+                  Instagram
+                </a>
               </li>
               <li>Estamos en todo el Perú</li>
             </ul>
           </li>
           <li>
-            <span className="font-bold text-lg" >Empresa</span>
+            <span className="font-bold text-lg">Empresa</span>
             <ul className="">
-                <li>
-                  <a href="#">Sobre Nosotros</a>
-                </li>
-                <li>
-                  <a href="#">Clientes</a>
-                </li>
-                <li>
-                  <a href="#">Blog</a>
-                </li>
-                <li>
-                  <a href="#">Proceso de seleccíon</a>
-                </li>
-                <li>
-                  <a href="#">Carrera -- Estamos contratando</a>
-                </li>
-                <li>
-                  <a href="#">Posiciones abiertas</a>
-                </li>
+              <li>
+                <a href="#">Sobre Nosotros</a>
+              </li>
+              <li>
+                <a href="#">Clientes</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+              <li>
+                <a href="#">Proceso de seleccíon</a>
+              </li>
+              <li>
+                <a href="#">Carrera -- Estamos contratando</a>
+              </li>
+              <li>
+                <a href="#">Posiciones abiertas</a>
+              </li>
             </ul>
           </li>
           <li>
-            <span className="font-bold text-lg" >Servicios</span>
+            <span className="font-bold text-lg">Servicios</span>
             <ul>
               <li>
                 <a href="#">Servicio 1</a>
@@ -91,12 +103,10 @@ function Footer() {
       <hr />
       <main className="grid grid-cols-3">
         <div className="px-5">
-        <LogoHorizontal />
+          <LogoHorizontal />
         </div>
         <div className="col-span-2">
-          <h1 className="text-sm">
-            COPYRIGHT © 2012-2024 Kedevs, INC.
-          </h1>
+          <h1 className="text-sm">COPYRIGHT © 2012-2024 Kedevs, INC.</h1>
           <p className="text-xs">Todos los derechos reservados</p>
         </div>
       </main>

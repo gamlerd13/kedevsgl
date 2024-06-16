@@ -1,5 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { z } from "zod";
+import { messageSchema, mappedContries } from "./validators/messajeSchema";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -10,77 +12,129 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { z } from "zod";
-import { messageSchema } from "./validators/messajeSchema";
+import { Textarea } from "@/components/ui/textarea";
 
 function ContactForm() {
   const form = useForm<z.infer<typeof messageSchema>>({
     resolver: zodResolver(messageSchema),
     defaultValues: {
       fullname: "",
+      country: "Peru",
+      message: "Hola equipo de Kedevs, quiero ...",
     },
   });
 
-  const onSubmit = async (data: {}) => {
-    console.log(data);
+  const optionsCountries = Object.entries(mappedContries).map(
+    ([key, value]) => (
+      <SelectItem value={key} key={key}>
+        {value}
+      </SelectItem>
+    )
+  );
+
+  const onSubmit: SubmitHandler<z.infer<typeof messageSchema>> = async (
+    data
+  ) => {
+    const sendMail = await fetch("/api/send", {
+      method: "POST",
+    });
+    console.log(await sendMail);
   };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="fullname"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Nombres</FormLabel>
-              <FormControl>
-                <Input placeholder="manuel rojas asd" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="phoneNumber"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Numero de telefono</FormLabel>
-              <FormControl>
-                <Input type="number" placeholder="96012322" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Numero de Correo Electrónico</FormLabel>
-              <FormControl>
-                <Input
-                  type="email"
-                  placeholder="ejemplo@gmail.com"
-                  {...field}
-                />
-              </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-4 grid grid-cols-1"
+      >
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+          <div className="col-span-1">
+            <FormField
+              control={form.control}
+              name="fullname"
+              render={({ field }) => (
+                <FormItem className="mt-0">
+                  <FormLabel>Nombres</FormLabel>
+                  <FormControl>
+                    <Input placeholder="manuel rojas muri.." {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="col-span-1">
+            <FormField
+              control={form.control}
+              name="phoneNumber"
+              render={({ field }) => (
+                <FormItem className="mt-0">
+                  <FormLabel>Numero de telefono</FormLabel>
+                  <FormControl>
+                    <Input type="text" placeholder="96012322" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+          <div className="col-span-1">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Numero de Correo Electrónico</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="ejemplo@gmail.com"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="col-span-1">
+            <FormField
+              control={form.control}
+              name="country"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>País</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Seleccione país" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {optionsCountries && optionsCountries}
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+
         <FormField
           control={form.control}
           name="location"
@@ -90,9 +144,6 @@ function ContactForm() {
               <FormControl>
                 <Input placeholder="arequipa" {...field} />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -104,20 +155,18 @@ function ContactForm() {
             <FormItem>
               <FormLabel>Mensaje</FormLabel>
               <FormControl>
-                <Input
+                <Textarea
                   placeholder="Hola equipo de Kedevs, quiero ..."
+                  className="resize-none"
                   {...field}
                 />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Enviar mensaje</Button>
       </form>
     </Form>
   );

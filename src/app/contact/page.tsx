@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import NavBar from "../components/common/NavBar";
 import Footer from "../components/common/Footer";
@@ -15,17 +16,19 @@ function page() {
   return (
     <div>
       <NavBar />
-      <div className="pt-20">
+      <div className="pt-32 lg:mx-64 mx-5">
         <Card>
           <CardHeader>
             <CardTitle>Contáctanos</CardTitle>
-            <CardDescription>Queremos conocer todo acerca de tu proyecto</CardDescription>
+            <CardDescription>
+              Queremos conocer todo acerca de tu proyecto
+            </CardDescription>
           </CardHeader>
           <CardContent>
-            <ContactForm/>
+            <ContactForm />
           </CardContent>
           <CardFooter>
-            <p>Card Footer</p>
+            <p></p>
           </CardFooter>
         </Card>
       </div>

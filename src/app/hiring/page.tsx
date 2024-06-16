@@ -1,0 +1,39 @@
+"use client";
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
+import Footer from "../components/common/Footer";
+import NavBar from "../components/common/NavBar";
+import OpenPositions from "./OpenPositions";
+function page() {
+  return (
+    <>
+      <NavBar />
+
+      <main className={`pt-20`}>
+        <div className="pt-32">
+          <h1 className="text-6xl text-center font-bold px-16">
+            Deja huella trabajando a distancia con nosotros y
+            <span className="font-bold text-violet-600">
+              {" "}
+              clientes de todo el mundo,{" "}
+            </span>
+            aprende con los mejores.
+          </h1>
+          <div className="flex justify-center py-8">
+            <Link href="/team" legacyBehavior passHref>
+              <Button>
+                Nuestro Equipo <ChevronRight />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </main>
+      <OpenPositions />
+      <Footer />
+    </>
+  );
+}
+
+export default page;
