@@ -1,12 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+// import type { NextApiRequest, NextApiResponse } from "next";
 import { EmailTemplate } from "@/app/components/EmailTemplate";
 import { Resend } from "resend";
 import { MailRequestBody } from "@/app/types/global";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: NextRequest, res: NextResponse) {
   if (req.method === "POST") {
     try {
       const body = await req.json();
