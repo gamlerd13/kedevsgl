@@ -1,22 +1,36 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { EmailTemplate } from '@/app/components/EmailTemplate';
-import { Resend } from 'resend';
+import type { NextApiRequest, NextApiResponse } from "next";
+import { EmailTemplate } from "@/app/components/EmailTemplate";
+import { Resend } from "resend";
+import { MailRequestBody } from "@/app/types/global";
+import { NextResponse } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const sendMail =  async (req: NextApiRequest, res: NextApiResponse) => {
-  const { data, error } = await resend.emails.send({
-    from: 'Acme <onboarding@resend.dev>',
-    to: ['gamlerd13@gmail.com'],
-    subject: 'Hello world',
-    react: EmailTemplate({ firstName: 'John' }),
-    text: ""
-  });
+export async function POST(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === "POST") {
+    try {
+      const body = await req.json();
+      const { subject } = body;
 
-  if (error) {
-    return res.status(400).json(error);
+      const { data, error } = await resend.emails.send({
+        from: "Acme <onboarding@resend.dev>",
+        to: ["edermiravalgarcia1999@gmail.com"],
+        subject: subject,
+        react: EmailTemplate(body),
+        text: "",
+      });
+      if (error) {
+        return NextResponse.json(
+          { error: "Error al enviar el correo" },
+          { status: 400 }
+        );
+      }
+      return NextResponse.json(data, { status: 200 });
+    } catch (error) {
+      return NextResponse.json(
+        { error: "Error interno del servidor" },
+        { status: 500 }
+      );
+    }
   }
-
-  res.status(200).json(data);
-};
-export default sendMail
+}

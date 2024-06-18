@@ -1,3 +1,4 @@
+"use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
@@ -28,6 +29,9 @@ function ContactForm() {
     defaultValues: {
       fullname: "",
       country: "Peru",
+      phoneNumber: "",
+      email: "",
+      location: "",
       message: "Hola equipo de Kedevs, quiero ...",
     },
   });
@@ -43,10 +47,14 @@ function ContactForm() {
   const onSubmit: SubmitHandler<z.infer<typeof messageSchema>> = async (
     data
   ) => {
+    const dataMail = { ...data, subject: "Quiero información" };
     const sendMail = await fetch("/api/send", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataMail),
     });
-    console.log(await sendMail);
   };
 
   return (
@@ -95,7 +103,7 @@ function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Numero de Correo Electrónico</FormLabel>
+                  <FormLabel>Correo Electrónico</FormLabel>
                   <FormControl>
                     <Input
                       type="email"
