@@ -10,7 +10,7 @@ import { DiDjango } from "react-icons/di";
 
 function ValueCompany() {
   return (
-    <main className="md:mx-32 px-5 py-10 bg-[#0a1224] rounded-lg">
+    <main className="mx-2 md:mx-32 px-5 py-10 bg-[#0a1224] rounded-lg">
       <div className="grid grid-cols-2">
         <div className="col-span-2 lg:col-span-1">
           <h1 className="p-4 text-2xl font-medium text-slate-200">

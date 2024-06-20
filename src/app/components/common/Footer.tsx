@@ -3,6 +3,8 @@
 import React from "react";
 import LogoHorizontal from "./LogoHorizontal";
 import services from "@/app/components/common/servicesData.json";
+import { KEDEVS_PHONE_NUMBER } from "@/utils/whatsappUtils";
+
 function Footer() {
   return (
     <footer className="pt-16 lg:mx-32 mx-5 text-zinc-500 tracking-wide leading-loose">
@@ -14,15 +16,19 @@ function Footer() {
             <ul>
               <li>
                 Escribenos -{" "}
-                <a className="font-medium text-violet-600 underline" href="#">
-                  hola@kedevs.com
+                <a
+                  className="font-medium text-violet-600 underline"
+                  href="/contact"
+                >
+                  kedevs.pe@gmail.com
                 </a>
               </li>
               <li>
-                Llamanos - <span>96521424</span>
+                Llamanos - <span>{KEDEVS_PHONE_NUMBER}</span>
               </li>
               <li className="text-green-600">
-                Whatsapp - <span className="font-medium">96521424</span>
+                Whatsapp -{" "}
+                <span className="font-medium">{KEDEVS_PHONE_NUMBER}</span>
               </li>
               <li>
                 <a href="#" className="text-blue-600 font-medium underline">
@@ -40,6 +46,15 @@ function Footer() {
                 </a>
               </li>
               <li>
+                <a
+                  href="https://www.tiktok.com/@kedevss"
+                  target="_blank"
+                  className="text-black font-medium underline"
+                >
+                  Tick tock
+                </a>
+              </li>
+              <li>
                 <a href="#" className="text-rose-600 font-medium underline">
                   Instagram
                 </a>
@@ -51,7 +66,7 @@ function Footer() {
             <span className="font-bold text-lg">Empresa</span>
             <ul className="">
               <li>
-                <a href="#">Sobre Nosotros</a>
+                <a href="/">Sobre Nosotros</a>
               </li>
               <li>
                 <a href="#">Clientes</a>
@@ -60,13 +75,13 @@ function Footer() {
                 <a href="#">Blog</a>
               </li>
               <li>
-                <a href="#">Proceso de seleccíon</a>
+                <a href="/hiring">Proceso de seleccíon</a>
               </li>
               <li>
-                <a href="#">Carrera -- Estamos contratando</a>
+                <a href="/hiring">Carrera -- Estamos contratando</a>
               </li>
               <li>
-                <a href="#">Posiciones abiertas</a>
+                <a href="/hiring">Posiciones abiertas</a>
               </li>
             </ul>
           </li>
