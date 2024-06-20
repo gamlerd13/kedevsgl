@@ -47,8 +47,9 @@ export const EmailTemplate: React.FC<Readonly<MailRequestBody>> = (
             style={logo}
           />
           <Text style={paragraph}>
-            Hola, Equipo de Kedevs soy {fullname}, te comparto información
-            acerca de mí:{" "}
+            Hola equipo de Kedevs, soy{" "}
+            <span className="font-medium">{fullname}</span>, te comparto
+            información acerca de mí:{" "}
           </Text>
           <Section style={informationTable}>
             <Row style={informationTableRow}>
@@ -81,7 +82,7 @@ export const EmailTemplate: React.FC<Readonly<MailRequestBody>> = (
                   <Row>
                     <Column style={informationTableColumn}>
                       <Text style={informationTableLabel}>
-                        Correo Electronico:{" "}
+                        Correo Electrónico:{" "}
                       </Text>
                       <Link
                         style={{
