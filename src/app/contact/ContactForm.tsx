@@ -66,7 +66,7 @@ function ContactForm() {
       "Hola Equipo de Kedevs, quisiera información acerca de sus servicios."
     );
     const whatsappLink = `https://wa.me/${KEDEVS_PHONE_NUMBER}?text=${message}`;
-    window.location.href = whatsappLink;
+    window.open(whatsappLink, "_blank");
     resetMessage();
   };
 
