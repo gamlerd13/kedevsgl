@@ -2,12 +2,12 @@
 
 import React from "react";
 import LogoHorizontal from "./LogoHorizontal";
-
+import services from "@/app/components/common/servicesData.json";
 function Footer() {
   return (
-    <footer className="pt-16 md:mx-32 mx-5 text-zinc-500 tracking-wide leading-loose">
+    <footer className="pt-16 lg:mx-32 mx-5 text-zinc-500 tracking-wide leading-loose">
       <hr />
-      <nav className="px-5">
+      <nav className="px-5 text-sm">
         <ul className="grid md:grid-cols-5 gap-4 grid-cols-1">
           <li className="md:col-span-2">
             <span className="font-bold text-lg">Contactanos</span>
@@ -73,14 +73,18 @@ function Footer() {
           <li>
             <span className="font-bold text-lg">Servicios</span>
             <ul>
+              {services &&
+                services.map((e) => (
+                  <li key={e.id}>
+                    <a className="hover:underline " href="/services">
+                      {e.name}
+                    </a>
+                  </li>
+                ))}
               <li>
-                <a href="#">Servicio 1</a>
-              </li>
-              <li>
-                <a href="#">Servicio 1</a>
-              </li>
-              <li>
-                <a href="#">Servicio 1</a>
+                <a className="text-blue-400 underline" href="/services">
+                  Ver más servicios
+                </a>
               </li>
             </ul>
           </li>
@@ -106,7 +110,7 @@ function Footer() {
           <LogoHorizontal />
         </div>
         <div className="col-span-2">
-          <h1 className="text-sm">COPYRIGHT © 2012-2024 Kedevs, INC.</h1>
+          <h1 className="text-sm">COPYRIGHT © 2017-2024 Kedevs, INC.</h1>
           <p className="text-xs">Todos los derechos reservados</p>
         </div>
       </main>

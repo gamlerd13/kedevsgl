@@ -1,10 +1,10 @@
 // import type { NextApiRequest, NextApiResponse } from "next";
 import { EmailTemplate } from "@/app/components/EmailTemplate";
 import { Resend } from "resend";
-import { MailRequestBody } from "@/app/types/global";
 import { NextResponse, NextRequest } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const emailAccount = process.env.EMAIL_ACCOUNT || "";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   if (req.method === "POST") {
@@ -14,7 +14,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
       const { data, error } = await resend.emails.send({
         from: "Acme <onboarding@resend.dev>",
-        to: ["edermiravalgarcia1999@gmail.com"],
+        to: [emailAccount],
         subject: subject,
         react: EmailTemplate(body),
         text: "",

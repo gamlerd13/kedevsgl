@@ -22,18 +22,16 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useDefaultMessage } from "@/store/defaultMessage";
+import { toast } from "sonner";
+import { KEDEVS_PHONE_NUMBER } from "@/utils/whatsappUtils";
 
 function ContactForm() {
+  const { message, resetMessage } = useDefaultMessage();
+
   const form = useForm<z.infer<typeof messageSchema>>({
     resolver: zodResolver(messageSchema),
-    defaultValues: {
-      fullname: "",
-      country: "Peru",
-      phoneNumber: "",
-      email: "",
-      location: "",
-      message: "Hola equipo de Kedevs, quiero ...",
-    },
+    defaultValues: message,
   });
 
   const optionsCountries = Object.entries(mappedContries).map(
@@ -55,6 +53,21 @@ function ContactForm() {
       },
       body: JSON.stringify(dataMail),
     });
+    const messageToast = sendMail.ok
+      ? "Correo enviado satisfactoriamente, por favor espera la respuesta del equipo de kedevs"
+      : "Hubo un error al enviar el correo, por favor intente más tarde.";
+    sendMail.ok ? toast.success(messageToast) : toast.error(messageToast);
+    form.reset();
+    resetMessage();
+  };
+
+  const handleWhatsappClick = () => {
+    const message = encodeURIComponent(
+      "Hola Equipo de Kedevs, quisiera información acerca de sus servicios."
+    );
+    const whatsappLink = `https://wa.me/${KEDEVS_PHONE_NUMBER}?text=${message}`;
+    window.location.href = whatsappLink;
+    resetMessage();
   };
 
   return (
@@ -87,7 +100,7 @@ function ContactForm() {
                 <FormItem className="mt-0">
                   <FormLabel>Numero de telefono</FormLabel>
                   <FormControl>
-                    <Input type="text" placeholder="96012322" {...field} />
+                    <Input type="text" {...field} placeholder="96012322" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -156,6 +169,7 @@ function ContactForm() {
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="message"
@@ -174,7 +188,16 @@ function ContactForm() {
           )}
         />
 
-        <Button type="submit">Enviar mensaje</Button>
+        <Button type="submit">Enviar correo</Button>
+        <div className="flex justify-end">
+          <Button
+            onClick={() => handleWhatsappClick()}
+            className="bg-green-600 hover:bg-green-700"
+            type="button"
+          >
+            Enviar Whatsapp
+          </Button>
+        </div>
       </form>
     </Form>
   );

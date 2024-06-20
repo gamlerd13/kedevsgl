@@ -2,7 +2,9 @@
 
 import * as React from "react";
 import Link from "next/link";
-
+import { useState } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
 import { cn } from "@/lib/utils";
 import ImageComponent from "./Image";
 import LogoHorizontal from "./LogoHorizontal";
@@ -16,155 +18,127 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "CRM",
-    href: "/docs/primitives/alert-dialog",
-    description: "Administra interacciones y datos de clientes.",
-  },
-  {
-    title: "Plataforma de E-commerce",
-    href: "/docs/primitives/hover-card",
-    description: "Vende productos en línea fácilmente.",
-  },
-  {
-    title: "Sistema de Reservas",
-    href: "/docs/primitives/progress",
-    description: "Gestiona reservas y citas fácilmente.",
-  },
-  {
-    title: "Software de Contabilidad",
-    href: "/docs/primitives/scroll-area",
-    description: "Registra y analiza transacciones financieras.",
-  },
-  {
-    title: "Sistema de Facturación Electrónica",
-    href: "/docs/primitives/tabs",
-    description: "Emite facturas electrónicas legalmente.",
-  },
-  {
-    title: "Plataforma de Delivery de Comida",
-    href: "/docs/primitives/tooltip",
-    description: "Ordena comida de restaurantes cercanos.",
-  },
-  {
-    title: "Software de Gestión Educativa",
-    href: "/docs/primitives/tooltip",
-    description: "Administra colegios y universidades eficientemente.",
-  },
-  {
-    title: "Marketplace Local",
-    href: "/docs/primitives/tooltip",
-    description: "Compra y vende productos locales.",
-  },
-  {
-    title: "Sistema de Turnos Médicos",
-    href: "/docs/primitives/tooltip",
-    description: "Reserva citas médicas fácilmente.",
-  },
-  {
-    title: "Gestión de Nómina y Recursos Humanos",
-    href: "/docs/primitives/tooltip",
-    description: "Administra pagos y empleados eficazmente.",
-  },
-  {
-    title: "Plataforma de E-learning",
-    href: "/docs/primitives/tooltip",
-    description: "Accede a cursos y formación online.",
-  },
-  {
-    title: "Sistema de Gestión de Inventarios",
-    href: "/docs/primitives/tooltip",
-    description: "Controla stock y productos eficientemente.",
-  },
-];
+import servicesData from "./servicesData.json";
+import { ServiceType } from "@/app/types/global";
 
 function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const components: ServiceType[] = servicesData;
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="w-full flex justify-center">
-      <NavigationMenu className="text-xl font-medium h-20 bg-white fixed">
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                <LogoHorizontal />
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+    <div
+      className={`w-full flex  ${isOpen ? "justify-center" : " justify-end"}`}
+    >
+      <NavigationMenu
+        className="text-xl font-medium h-20 bg-white fixed
+        w-full flex justify-between md:justify-center items-center px-4 md:px-8"
+      >
+        <NavigationMenuItem className="hidden md:block">
+          <Link href="/" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <LogoHorizontal />
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Empresa</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid grid-cols-4 gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3 col-span-1">
-                  <NavigationMenuLink asChild>
-                    <a
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
-                      href="/"
+        <div
+          className={`md:flex ${
+            isOpen ? "flex" : "hidden"
+          } flex-col md:flex-row items-center`}
+        >
+          <NavigationMenuList className="flex flex-col md:flex-row">
+            <NavigationMenuItem className="">
+              <NavigationMenuTrigger>Empresa</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid grid-cols-3 gap-3 p-4 w-[400px] md:w-[400px] lg:w-[500px]">
+                  <li className="row-span-3 sm:col-span-1 col-span-3">
+                    <NavigationMenuLink asChild>
+                      <a
+                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
+                        href="/"
+                      >
+                        <ImageComponent />
+                        <div className="mb-2 mt-4 text-lg text-center hover:underline">
+                          Kedevs
+                        </div>
+                      </a>
+                    </NavigationMenuLink>
+                  </li>
+                  <div className="sm:col-span-2 col-span-3">
+                    <ListItem
+                      href="/about"
+                      title="About us"
+                      className="hover:bg-violet-400"
                     >
-                      <ImageComponent />
-                      <div className="mb-2 mt-4 text-lg text-center hover:underline">
-                        Kedevs
-                      </div>
-                    </a>
-                  </NavigationMenuLink>
-                </li>
-                <ListItem
-                  href="/about"
-                  title="About us"
-                  className="col-span-2 hover:bg-violet-400 underline"
-                >
-                  Conoce más acerca de Kedevs
-                </ListItem>
-                <ListItem
-                  href="/team"
-                  title="Team"
-                  className="col-span-2 hover:bg-violet-400 underline"
-                >
-                  Nuestro Equipo
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Servicios</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {components.map((component) => (
+                      Conoce más acerca de Kedevs
+                    </ListItem>
+                    <ListItem
+                      href="/team"
+                      title="Team"
+                      className="hover:bg-violet-400"
+                    >
+                      Nuestro Equipo
+                    </ListItem>
+                  </div>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Servicios</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  {components.map((component) => (
+                    <ListItem
+                      key={component.id}
+                      title={component.name}
+                      href="/services"
+                    >
+                      {component.title}
+                    </ListItem>
+                  ))}
                   <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
+                    href="/services"
+                    title="Servicios"
+                    className="col-span-2 bg-violet-400 hover:bg-violet-500 underline"
                   >
-                    {component.description}
+                    Ver todos los servicios
                   </ListItem>
-                ))}
-                <ListItem
-                  href="/services"
-                  title="Servicios"
-                  className="col-span-2 bg-violet-400 hover:bg-violet-500 underline"
-                >
-                  Ver todo los servicios
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <Link href="/hiring" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Estamos contratando
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/contact" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Contactanos
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/hiring" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Estamos contratando
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/contact" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Contáctanos
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </div>
+        <div className="md:hidden items-end" onClick={toggleMenu}>
+          {isOpen ? (
+            <IoMdClose
+              className="rounded p-1 bg-rose-400 hover:bg-rose-500"
+              size={30}
+            />
+          ) : (
+            <AiOutlineMenu
+              className="rounded p-1 bg-violet-300 hover:bg-violet-400"
+              size={30}
+            />
+          )}
+        </div>
       </NavigationMenu>
     </div>
   );

@@ -10,11 +10,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Toaster } from "sonner";
 import ContactForm from "./ContactForm";
 
 function page() {
   return (
     <div>
+      <Toaster />
       <NavBar />
       <div className="pt-32 lg:mx-64 mx-5">
         <Card>

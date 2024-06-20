@@ -12,8 +12,8 @@ function page() {
       <NavBar />
 
       <header className={` pt-20`}>
-        <div className="pt-32">
-          <h1 className="text-6xl text-center font-bold px-16">
+        <div className="pt-10 md:pt-32">
+          <h1 className="text-xl md:text-6xl text-center font-bold px-16">
             Nuestro equipo es una comunidad en crecimiento y con
             <span className="font-bold text-violet-600"> diversidad </span>
             de personas con

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import logo from "../../../../public/kedevs_logo.png";
@@ -11,6 +11,7 @@ function ImageComponent() {
       alt="Kedevs"
       width={500}
       height={300}
+      className="w-[200px]"
     ></Image>
   );
 }

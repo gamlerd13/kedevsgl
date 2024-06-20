@@ -25,7 +25,7 @@ function OpenPositions() {
 
   return (
     <div className="md:mx-32">
-      <div className="p-5 grid grid-cols-5">
+      <div className="p-5 grid grid-cols-5 gap-1">
         <Input
           onChange={(e) => {
             if (e.target.value.trim().length > 0) {
