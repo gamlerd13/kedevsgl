@@ -9,7 +9,6 @@ function OpenPositions() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log("this is the first message");
       setIsLoading(false);
     }, 2000);
 
@@ -21,7 +20,6 @@ function OpenPositions() {
     setIsLoading(true);
     setLookupPosition(e.target.value);
   };
-  console.log(lookupPosition.trim());
 
   return (
     <div className="md:mx-32">
