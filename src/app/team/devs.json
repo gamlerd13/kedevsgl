@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Eder Miraval Garcia",
+    "major": "Software Engeenier",
+    "position_category": "development",
+    "position": "Fullstack Developer",
+    "experiencie": 4,
+    "url_image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "background": "Desarrollador de software con 4 años de experiencia en diversas industrias, incluyendo startups y empresas tecnológicas. Especializado en la creación de aplicaciones web y móviles utilizando lenguajes como JavaScript, Python y Java. Conocimientos profundos en diseño de arquitecturas escalables, pruebas automatizadas y metodologías ágiles. Capacidad para colaborar en equipos multidisciplinarios y adaptarse rápidamente a nuevas tecnologías."
+  },
+  {
+    "id": 2,
+    "name": "Kevin Godoy",
+    "major": "Software Engeenier",
+    "position_category": "development",
+    "position": "Fronted Developer",
+    "experiencie": 3,
+    "url_image": "https://images.pexels.com/photos/3973335/pexels-photo-3973335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "background": "Desarrollador de software con 2 años de experiencia en el sector tecnológico. Enfocado en el desarrollo de aplicaciones web utilizando frameworks como React y Node.js. Habilidades en resolución de problemas y trabajo en equipo en entornos ágiles."
+  },
+  {
+    "id": 3,
+    "name": "Sergio Bonilla valverde",
+    "major": "Marketing",
+    "position_category": "marketing",
+    "position": "Marketing",
+    "experiencie": 4,
+    "url_image": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "background": "Profesional de marketing con 4 años de experiencia en la creación y ejecución de estrategias de marketing digital y tradicional. Experto en análisis de mercado, desarrollo de campañas publicitarias y gestión de redes sociales. Habilidades avanzadas en SEO, SEM y marketing de contenido, con un enfoque en aumentar la visibilidad de la marca y generar leads. Capacidad para trabajar en entornos dinámicos y colaborar estrechamente con equipos de ventas y desarrollo de producto."
+  }
+]
