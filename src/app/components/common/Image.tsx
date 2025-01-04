@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-// import logo from "../../../../public/kedevs_logo.png";
 import logo from "../../../../public/logo-kedevs.jpg";
 import Image from "next/image";
 
@@ -12,7 +11,7 @@ function ImageComponent() {
       alt="Kedevs"
       width={500}
       height={300}
-      className="w-[200px]"
+      className="w-[200px] rounded-md"
     ></Image>
   );
 }

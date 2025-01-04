@@ -18,6 +18,11 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        "green-light": "#98ef98",
+        "green-dark": "#65f165",
+        "green-letter": "#179517",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

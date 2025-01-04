@@ -21,10 +21,13 @@ function page() {
         <div className="pt-10 md:pt-32">
           <h1 className="text-xl md:text-6xl text-center font-bold px-16">
             Nuestro equipo es una comunidad en crecimiento y con
-            <span className="font-bold text-violet-600"> diversidad </span>
+            <span className="font-bold text-green-letter"> diversidad </span>
             de personas con
-            <span className="font-bold text-violet-600"> talento </span> y muy
-            <span className="font-bold text-violet-600"> comprometidas. </span>
+            <span className="font-bold text-green-letter"> talento </span> y muy
+            <span className="font-bold text-green-letter">
+              {" "}
+              comprometidas.{" "}
+            </span>
           </h1>
           <div className="flex justify-center py-8">
             <Link href="/hiring" legacyBehavior passHref>

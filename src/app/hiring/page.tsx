@@ -21,7 +21,7 @@ function page() {
         <div className="pt-10 md:pt-32">
           <h1 className="text-xl md:text-6xl text-center font-bold px-16">
             Deja huella trabajando a distancia con nosotros y
-            <span className="font-bold text-violet-600">
+            <span className="font-bold text-green-letter">
               {" "}
               clientes de todo el mundo,{" "}
             </span>

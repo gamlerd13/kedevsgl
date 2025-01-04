@@ -62,7 +62,9 @@ function NavBar() {
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
                         href="/"
                       >
-                        <ImageComponent />
+                        <div className="border border-green-light rounded-md">
+                          <ImageComponent />
+                        </div>
                         <div className="mb-2 mt-4 text-lg text-center hover:underline">
                           Kedevs
                         </div>
@@ -73,14 +75,14 @@ function NavBar() {
                     <ListItem
                       href="/"
                       title="About us"
-                      className="hover:bg-violet-400"
+                      className="hover:bg-green-light"
                     >
                       Conoce más acerca de Kedevs
                     </ListItem>
                     <ListItem
                       href="/team"
                       title="Team"
-                      className="hover:bg-violet-400"
+                      className="hover:bg-green-light"
                     >
                       Nuestro Equipo
                     </ListItem>
@@ -104,7 +106,7 @@ function NavBar() {
                   <ListItem
                     href="/services"
                     title="Servicios"
-                    className="col-span-2 bg-violet-400 hover:bg-violet-500 underline"
+                    className="col-span-2 bg-green-light hover:bg-green-dark underline"
                   >
                     Ver todos los servicios
                   </ListItem>
@@ -158,7 +160,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground hover:bg-violet-400",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground hover:bg-green-light",
             className,
           )}
           {...props}

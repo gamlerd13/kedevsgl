@@ -16,14 +16,14 @@ function page() {
   return (
     <div>
       <NavBar />
-      <header className="pt-20 lg:mx-32 p-4">
-        <h1 className="lg:text-6xl text-lg text-center">
+      <header className="pt-20 p-4">
+        <h1 className="text-xl md:text-6xl text-center font-bold px-16 pt-20">
           Ofrecemos una amplia gama de{" "}
-          <span className="text-violet-600 font-medium">
+          <span className="text-green-letter font-bold">
             soluciones digitales
           </span>{" "}
           diseñadas para optimizar la{" "}
-          <span className="text-violet-600 font-medium">
+          <span className="text-green-letter font-bold">
             gestión empresarial
           </span>
         </h1>

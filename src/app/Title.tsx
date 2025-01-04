@@ -11,7 +11,7 @@ function Title() {
       <div className="pt-10 md:pt-32">
         <h1 className="text-xl md:text-6xl text-center font-bold px-16">
           Desata el potencial de
-          <span className="font-bold text-violet-600"> crecimiento </span>
+          <span className="font-bold text-green-letter"> crecimiento </span>
           de tu organización e impúlsala a convertirse en su mejor versión
         </h1>
         <div className="flex justify-center py-8">
