@@ -1,32 +1,82 @@
 [
   {
     "id": 1,
-    "name": "Eder Miraval Garcia",
-    "major": "Software Engeenier",
+    "name": "Eder",
+    "major": "Software Engineer",
     "position_category": "development",
     "position": "Fullstack Developer",
-    "experiencie": 4,
+    "experience": 4,
     "url_image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "background": "Desarrollador de software con 4 años de experiencia en diversas industrias, incluyendo startups y empresas tecnológicas. Especializado en la creación de aplicaciones web y móviles utilizando lenguajes como JavaScript, Python y Java. Conocimientos profundos en diseño de arquitecturas escalables, pruebas automatizadas y metodologías ágiles. Capacidad para colaborar en equipos multidisciplinarios y adaptarse rápidamente a nuevas tecnologías."
   },
   {
     "id": 2,
-    "name": "Kevin Godoy",
-    "major": "Software Engeenier",
+    "name": "Kevin",
+    "major": "Software Engineer",
     "position_category": "development",
-    "position": "Fronted Developer",
-    "experiencie": 3,
+    "position": "Frontend Developer",
+    "experience": 3,
     "url_image": "https://images.pexels.com/photos/3973335/pexels-photo-3973335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "background": "Desarrollador de software con 2 años de experiencia en el sector tecnológico. Enfocado en el desarrollo de aplicaciones web utilizando frameworks como React y Node.js. Habilidades en resolución de problemas y trabajo en equipo en entornos ágiles."
+    "background": "Desarrollador de software con 3 años de experiencia en el sector tecnológico. Enfocado en el desarrollo de aplicaciones web utilizando frameworks como React y Node.js. Habilidades en resolución de problemas y trabajo en equipo en entornos ágiles."
   },
   {
     "id": 3,
-    "name": "Sergio Bonilla valverde",
+    "name": "Sergio",
     "major": "Marketing",
     "position_category": "marketing",
-    "position": "Marketing",
-    "experiencie": 4,
+    "position": "Marketing Specialist",
+    "experience": 4,
     "url_image": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "background": "Profesional de marketing con 4 años de experiencia en la creación y ejecución de estrategias de marketing digital y tradicional. Experto en análisis de mercado, desarrollo de campañas publicitarias y gestión de redes sociales. Habilidades avanzadas en SEO, SEM y marketing de contenido, con un enfoque en aumentar la visibilidad de la marca y generar leads. Capacidad para trabajar en entornos dinámicos y colaborar estrechamente con equipos de ventas y desarrollo de producto."
+    "background": "Profesional de marketing con 4 años de experiencia en la creación y ejecución de estrategias de marketing digital y tradicional. Experto en análisis de mercado, desarrollo de campañas publicitarias y gestión de redes sociales."
+  },
+  {
+    "id": 5,
+    "name": "Xavier",
+    "major": "Software Engineer",
+    "position_category": "development",
+    "position": "Frontend Developer",
+    "experience": 5,
+    "url_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIX6szuCM4mxwFqU3oYpEPr4bto2hk9me1-A&s",
+    "background": "Especialista en ciberseguridad con 5 años de experiencia en la protección de infraestructuras digitales. Habilidades avanzadas en detección y prevención de amenazas, gestión de vulnerabilidades y cumplimiento normativo."
+  },
+  {
+    "id": 6,
+    "name": "Diego",
+    "major": "Computer Science",
+    "position_category": "development",
+    "position": "Backend Developer",
+    "experience": 2,
+    "url_image": "https://cdn.prod.website-files.com/6452937893cd845b6181c39e/65cd10b25a74e4e74e77bc2c_Joosten-David-240117-8464-fave-final-BG13-linkedin.jpg",
+    "background": "Backend Developer con 2 años de experiencia en el desarrollo de API RESTful y servicios escalables. Proficiente en Node.js, Python y bases de datos como PostgreSQL y MongoDB."
+  },
+  {
+    "id": 7,
+    "name": "Cristian",
+    "major": "Software Engineering",
+    "position_category": "development",
+    "position": "Mobile Developer",
+    "experience": 3,
+    "url_image": "https://covalto-production-website.s3.amazonaws.com/Hero_Mobile_Cuenta_Personas_V1_1_8046e424ea.webp",
+    "background": "Desarrollador de aplicaciones móviles con experiencia en iOS y Android. Habilidades avanzadas en Swift, Kotlin y Flutter. Experto en interfaces de usuario intuitivas y de alto rendimiento."
+  },
+  {
+    "id": 8,
+    "name": "Kristopher",
+    "major": "Information Technology",
+    "position_category": "development",
+    "position": "DevOps Engineer",
+    "experience": 4,
+    "url_image": "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "background": "Ingeniero DevOps con experiencia en la automatización de infraestructuras utilizando herramientas como Docker, Kubernetes y Terraform. Enfoque en la mejora del ciclo de vida del desarrollo y la optimización de pipelines de CI/CD."
+  },
+  {
+    "id": 9,
+    "name": "Bryan",
+    "major": "Information Technology",
+    "position_category": "development",
+    "position": "DevOps Engineer",
+    "experience": 4,
+    "url_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE4h0dQpT7W65j3G0aaTpVYe7dIiRlMqcdNg&s",
+    "background": "Ingeniero DevOps con experiencia en la automatización de infraestructuras utilizando herramientas como Docker, Kubernetes y Terraform. Enfoque en la mejora del ciclo de vida del desarrollo y la optimización de pipelines de CI/CD."
   }
 ]

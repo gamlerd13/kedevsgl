@@ -35,7 +35,7 @@ function page() {
           </div>
         </div>
       </header>
-      <div className="w-full flex justify-center">
+      <div className="w-ful">
         <Team />
       </div>
 
