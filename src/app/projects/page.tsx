@@ -33,7 +33,7 @@ export default function ProjectsPage() {
     <>
       <NavBar />
 
-      <div className="pt-10 md:pt-32">
+      <div className="pt-20 md:pt-32">
         <h1 className="text-xl md:text-6xl text-center font-bold px-16">
           Desata el potencial de
           <span className="font-bold text-green-letter"> crecimiento </span>
