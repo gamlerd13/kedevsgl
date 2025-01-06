@@ -17,7 +17,7 @@ function page() {
     <div>
       <NavBar />
       <header className="pt-20 p-4">
-        <h1 className="text-xl md:text-6xl text-center font-bold px-16 pt-20">
+        <h1 className="text-xl md:text-6xl text-center font-bold md:px-16 pt-20">
           Ofrecemos una amplia gama de{" "}
           <span className="text-green-letter font-bold">
             soluciones digitales

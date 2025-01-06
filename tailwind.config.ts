@@ -22,6 +22,7 @@ const config = {
         "green-light": "#98ef98",
         "green-dark": "#65f165",
         "green-letter": "#179517",
+        "blue-found": "#0a1224",
       },
       keyframes: {
         "accordion-down": {

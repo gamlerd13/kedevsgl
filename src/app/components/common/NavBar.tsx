@@ -38,16 +38,19 @@ function NavBar() {
         className="text-xl font-medium h-20 bg-white fixed
         w-full flex justify-between md:justify-center items-center px-4 md:px-8"
       >
-        <NavigationMenuItem className="hidden md:block">
+        {/* modify */}
+        {/* <NavigationMenuItem className="hidden md:block"> */}
+        <NavigationMenuItem className="navbar">
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <LogoHorizontal />
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-
         <div
-          className={`md:flex ${
+          //modify
+          // className={`md:flex ${
+          className={`navbar ${
             isOpen ? "flex" : "hidden"
           } flex-col md:flex-row items-center`}
         >
@@ -127,12 +130,21 @@ function NavBar() {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/projects" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Proyectos
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
             <NavigationMenuIndicator className="w-5 h-5">
               <div className="Arrow" />
             </NavigationMenuIndicator>
           </NavigationMenuList>
         </div>
-        <div className="md:hidden items-end" onClick={toggleMenu}>
+        {/* modify */}
+        {/* <div className="md:hidden items-end" onClick={toggleMenu}> */}
+        <div className="hamburger items-end w-full" onClick={toggleMenu}>
           {isOpen ? (
             <IoMdClose
               className="rounded p-1 bg-rose-400 hover:bg-rose-500"
