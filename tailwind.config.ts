@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        brake: "888px",
+      },
       colors: {
         "green-light": "#98ef98",
         "green-dark": "#65f165",

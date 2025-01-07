@@ -1,161 +1,32 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
-import { useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
-import { IoMdClose } from "react-icons/io";
 import { cn } from "@/lib/utils";
-import ImageComponent from "./Image";
-import LogoHorizontal from "./LogoHorizontal";
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 import servicesData from "./servicesData.json";
 import { ServiceType } from "@/app/types/global";
-import { NavigationMenuIndicator } from "@radix-ui/react-navigation-menu";
+import { MenuNavbar } from "../MenuNavbar";
+import MenuHamburguer from "../MenuHamburguer";
 
 function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
-
   const components: ServiceType[] = servicesData;
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
-    <div
-      className={`w-full flex  ${isOpen ? "justify-center" : " justify-end"}`}
-    >
+    <div className={`w-full flex`}>
       <NavigationMenu
         className="text-xl font-medium h-20 bg-white fixed
-        w-full flex justify-between md:justify-center items-center px-4 md:px-8"
+        w-full flex justify-between brake:justify-center items-center px-4 md:px-8"
       >
-        {/* modify */}
-        {/* <NavigationMenuItem className="hidden md:block"> */}
-        <NavigationMenuItem className="navbar">
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              <LogoHorizontal />
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <div
-          //modify
-          // className={`md:flex ${
-          className={`navbar ${
-            isOpen ? "flex" : "hidden"
-          } flex-col md:flex-row items-center`}
-        >
-          <NavigationMenuList className="flex flex-col md:flex-row">
-            <NavigationMenuItem className="">
-              <NavigationMenuTrigger>Empresa</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid grid-cols-3 gap-3 p-4 w-[400px] md:w-[400px] lg:w-[500px]">
-                  <li className="row-span-3 sm:col-span-1 col-span-3">
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
-                        href="/"
-                      >
-                        <div className="border border-green-light rounded-md">
-                          <ImageComponent />
-                        </div>
-                        <div className="mb-2 mt-4 text-lg text-center hover:underline">
-                          Kedevs
-                        </div>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                  <div className="sm:col-span-2 col-span-3">
-                    <ListItem
-                      href="/"
-                      title="About us"
-                      className="hover:bg-green-light"
-                    >
-                      Conoce más acerca de Kedevs
-                    </ListItem>
-                    <ListItem
-                      href="/team"
-                      title="Team"
-                      className="hover:bg-green-light"
-                    >
-                      Nuestro Equipo
-                    </ListItem>
-                  </div>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Servicios</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {components.map((component) => (
-                    <ListItem
-                      key={component.id}
-                      title={component.name}
-                      href="/services"
-                    >
-                      {component.title}
-                    </ListItem>
-                  ))}
-                  <ListItem
-                    href="/services"
-                    title="Servicios"
-                    className="col-span-2 bg-green-light hover:bg-green-dark underline"
-                  >
-                    Ver todos los servicios
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/hiring" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Estamos contratando
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/contact" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Contáctanos
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/projects" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Proyectos
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuIndicator className="w-5 h-5">
-              <div className="Arrow" />
-            </NavigationMenuIndicator>
-          </NavigationMenuList>
+        <div className="hidden brake:flex">
+          <MenuNavbar components={components} />
         </div>
-        {/* modify */}
-        {/* <div className="md:hidden items-end" onClick={toggleMenu}> */}
-        <div className="hamburger items-end w-full" onClick={toggleMenu}>
-          {isOpen ? (
-            <IoMdClose
-              className="rounded p-1 bg-rose-400 hover:bg-rose-500"
-              size={30}
-            />
-          ) : (
-            <AiOutlineMenu
-              className="rounded p-1 bg-violet-300 hover:bg-violet-400"
-              size={30}
-            />
-          )}
+
+        <div className="relative brake:hidden">
+          <MenuHamburguer />
         </div>
       </NavigationMenu>
     </div>
