@@ -23,7 +23,7 @@ const config = {
       },
       colors: {
         "green-light": "#98ef98",
-        "green-dark": "#65f165",
+        "green-dark": "black",
         "green-letter": "#179517",
         "blue-found": "#0a1224",
       },

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -24,7 +23,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useDefaultMessage } from "@/store/defaultMessage";
 import { toast } from "sonner";
-import { KEDEVS_PHONE_NUMBER } from "@/utils/whatsappUtils";
+import { KEDEVS_PHONE_NUMBER_WSP } from "@/utils/whatsappUtils";
 
 function ContactForm() {
   const { message, resetMessage } = useDefaultMessage();
@@ -39,11 +38,11 @@ function ContactForm() {
       <SelectItem value={key} key={key}>
         {value}
       </SelectItem>
-    )
+    ),
   );
 
   const onSubmit: SubmitHandler<z.infer<typeof messageSchema>> = async (
-    data
+    data,
   ) => {
     const dataMail = { ...data, subject: "Quiero información" };
     const sendMail = await fetch("/api/send", {
@@ -63,9 +62,9 @@ function ContactForm() {
 
   const handleWhatsappClick = () => {
     const message = encodeURIComponent(
-      "Hola Equipo de Kedevs, quisiera información acerca de sus servicios."
+      "Hola Equipo de Kedevs, quisiera información acerca de sus servicios.",
     );
-    const whatsappLink = `https://wa.me/${KEDEVS_PHONE_NUMBER}?text=${message}`;
+    const whatsappLink = `https://wa.me/${KEDEVS_PHONE_NUMBER_WSP}?text=${message}`;
     window.open(whatsappLink, "_blank");
     resetMessage();
   };

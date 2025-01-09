@@ -21,9 +21,9 @@ const baseUrl = process.env.VERCEL_URL
   : "";
 
 export const EmailTemplate: React.FC<Readonly<MailRequestBody>> = (
-  mailProps
+  mailProps,
 ) => {
-  const { fullname, phoneNumber, email, country, location, message, subject } =
+  const { fullname, phoneNumber, email, country, location, message } =
     mailProps;
   const mailtoLink = `mailto:${email}?subject=Respuesta%20a%20tu%20mensaje&body=Hola%20${
     email.split("@")[0]

@@ -28,10 +28,10 @@ function Footer() {
                   <p className="break-all">kedevs.pe@gmail.com</p>
                 </Link>
               </li>
-              <li className="flex gap-2  items-center">
-                <img src="/call.png" className="w-8 h-8" />
-                <span>{KEDEVS_PHONE_NUMBER}</span>
-              </li>
+              {/* <li className="flex gap-2  items-center"> */}
+              {/*   <img src="/call.png" className="w-8 h-8" /> */}
+              {/*   <span>{KEDEVS_PHONE_NUMBER}</span> */}
+              {/* </li> */}
               <Link
                 href={`https://wa.me/${KEDEVS_PHONE_NUMBER_WSP}?text=Hola,%20quisiera%20información%20sobre%20sus%20servicios.`}
                 target="_blank"
@@ -40,7 +40,7 @@ function Footer() {
                 <img src="/wsp.png" className="w-8 h-8" />
                 <span className="font-medium">{KEDEVS_PHONE_NUMBER}</span>
               </Link>
-              <li className="mt-2">Estamos en todo el Perú</li>
+              {/* <li className="mt-2">Estamos en todo el Perú</li> */}
             </ul>
           </li>
           <li className="order-3">
