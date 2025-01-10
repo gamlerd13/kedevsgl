@@ -19,7 +19,7 @@ function NavBar() {
     <div className={`w-full flex`}>
       <NavigationMenu
         className="text-xl font-medium h-20 bg-white fixed
-        w-full flex justify-between brake:justify-center items-center px-4 md:px-8"
+        w-full flex justify-between brake:justify-center items-center px-4 md:px-8 z-50"
       >
         <div className="hidden brake:flex">
           <MenuNavbar components={components} />
