@@ -74,7 +74,7 @@ function page() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
-                <Link href={`/contact`}>
+                <Link href={`/contact`} key={index}>
                   <motion.div
                     key={service.name}
                     className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"

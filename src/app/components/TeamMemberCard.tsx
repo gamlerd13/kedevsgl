@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface TeamMemberCardProps {
@@ -21,7 +22,7 @@ export const TeamMemberCard = ({
       <div className="">
         <div className="p-4">
           <div className="w-44 h-44 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-400 to-purple-400">
-            <img
+            <Image
               src={url_image}
               alt={name}
               width={500}
