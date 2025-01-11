@@ -18,7 +18,11 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-const services = ["Desarrollo Web", "CRM", "Landing Pages", "E-commerce"];
+const experiences = [
+  "Desarrollo Web",
+  "Desarrollo Movil",
+  "Automatización de Procesos",
+];
 
 const socialLinks = [
   { icon: Facebook, href: "https://facebook.com" },
@@ -28,6 +32,7 @@ const socialLinks = [
 ];
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="pt-16 lg:mx-32 mx-5 text-zinc-500 tracking-wide leading-loose rounde">
       <hr />
@@ -36,15 +41,15 @@ function Footer() {
         <div className="max-w-6xl mx-auto px-4 py-10 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">Nuestros Servicios</h3>
+              <h3 className="text-lg font-semibold mb-4">Experiencia</h3>
               <ul className="space-y-2">
-                {services.map((service, index) => (
+                {experiences.map((experience, index) => (
                   <li key={index}>
                     <Link
                       href={`/projects`}
                       className="hover:text-gray-600 transition-colors"
                     >
-                      {service}
+                      {experience}
                     </Link>
                   </li>
                 ))}
@@ -105,7 +110,9 @@ function Footer() {
 
       <main className="mb-4 mt-2">
         <div className="text-center">
-          <h1 className="text-sm">COPYRIGHT © 2017-2024 Kedevs, INC.</h1>
+          <h1 className="text-sm">
+            COPYRIGHT © 2024-{currentYear} Kedevs, INC.
+          </h1>
           <p className="text-xs">Todos los derechos reservados</p>
         </div>
       </main>

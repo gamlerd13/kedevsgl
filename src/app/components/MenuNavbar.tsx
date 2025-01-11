@@ -52,7 +52,7 @@ export const MenuNavbar = ({ components }: MenuNavbarProps) => {
                 </li>
                 <div className="sm:col-span-2 col-span-3">
                   <ListItem
-                    href="/about"
+                    href="/"
                     title="About us"
                     className="hover:bg-green-light"
                   >
