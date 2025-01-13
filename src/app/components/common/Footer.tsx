@@ -71,6 +71,8 @@ function Footer() {
                   <Link
                     href={`https://wa.me/${KEDEVS_PHONE_NUMBER_WSP}?text=Hola,%20quisiera%20información%20sobre%20sus%20servicios.`}
                     className="hover:text-gray-600 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {KEDEVS_PHONE_NUMBER}
                   </Link>

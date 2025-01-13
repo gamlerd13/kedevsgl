@@ -1,5 +1,3 @@
-"use client";
-
 import NavBar from "./components/common/NavBar";
 import Footer from "./components/common/Footer";
 import Title from "./Title";
@@ -7,6 +5,24 @@ import ValueCompany from "./ValueCompany";
 import DiagonalBrandCarousel from "./components/DiagonalBrandCarousel";
 import UserReviews from "./components/user-reviews";
 import AboutUs from "./components/about-us";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kedevs",
+  description: "En Kedevs es donde encontraras los mejores servicios",
+  openGraph: {
+    title: "Kedevs",
+    description: "En kedevs encontraras los mejores servicios",
+    images: [
+      {
+        url: "/kedevs.jpg",
+        width: 1200,
+        height: 630,
+        alt: "kedevs logo",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (

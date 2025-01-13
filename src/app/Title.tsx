@@ -14,7 +14,7 @@ function Title() {
           de tu organización e impúlsala a convertirse en su mejor versión
         </h1>
         <div className="flex justify-center py-8">
-          <Link href="/contact" legacyBehavior passHref>
+          <Link href="/contact">
             <BtnContact title="Contactarse" />
           </Link>
         </div>

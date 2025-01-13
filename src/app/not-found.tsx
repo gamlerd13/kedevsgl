@@ -10,7 +10,7 @@ export default function NotFound() {
         <p className="p-4">
           Lo sentimos, pagina no existe. Regresar al menu principal de kedevs
         </p>
-        <Link href="/" legacyBehavior passHref>
+        <Link href="/">
           <Button>
             Regresar <ChevronRight />
           </Button>

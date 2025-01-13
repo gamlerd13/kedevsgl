@@ -12,10 +12,12 @@ import {
 } from "@/components/ui/card";
 import { Toaster } from "sonner";
 import ContactForm from "./ContactForm";
+
 export const metadata: Metadata = {
   title: "Kedevs | contacto",
   description: "En Kedevs es donde encontraras los mejores servicios",
 };
+
 function page() {
   return (
     <div className="w-full bg-gradient-to-b from-blue-found">
