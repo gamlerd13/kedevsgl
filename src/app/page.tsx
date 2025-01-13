@@ -13,8 +13,10 @@ export default function Home() {
     <div>
       <NavBar />
       <Title />
-      <AboutUs />
-      <UserReviews />
+      <AboutUs idAboutUs="about-us" />
+      <div className="md:mx-32 ">
+        <UserReviews />
+      </div>
       <div className="mx-2 py-10 rounded-lg mt-4">
         <h2 className="text-2xl md:text-6xl font-bold text-center mt-8 md:mx-32">
           <span className="text-green-letter">¡¡¡ </span>

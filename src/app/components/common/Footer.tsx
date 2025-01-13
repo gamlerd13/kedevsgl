@@ -10,8 +10,7 @@ import {
 import Link from "next/link";
 
 import {
-  Facebook,
-  Twitter,
+  Youtube,
   Instagram,
   Linkedin,
   Mail,
@@ -25,10 +24,9 @@ const experiences = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com" },
-  { icon: Twitter, href: "https://twitter.com" },
-  { icon: Instagram, href: "https://instagram.com" },
-  { icon: Linkedin, href: "https://linkedin.com" },
+  { icon: Youtube, href: "https://youtube.com/@kedevs" },
+  { icon: Instagram, href: "https://instagram.com/kedevs" },
+  { icon: Linkedin, href: "https://linkedin.com/company/kedevs" },
 ];
 
 function Footer() {

@@ -24,6 +24,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useDefaultMessage } from "@/store/defaultMessage";
 import { toast } from "sonner";
 import { KEDEVS_PHONE_NUMBER_WSP } from "@/utils/whatsappUtils";
+import { BtnContact } from "../components/common/btn-contact";
 
 function ContactForm() {
   const { message, resetMessage } = useDefaultMessage();
@@ -187,7 +188,7 @@ function ContactForm() {
           )}
         />
 
-        <Button type="submit">Enviar correo</Button>
+        <BtnContact title="Enviar correo" />
         <div className="flex justify-end">
           <Button
             onClick={() => handleWhatsappClick()}

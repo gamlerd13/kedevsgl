@@ -1,13 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Users, Target, History } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Users, Target, History } from "lucide-react";
 
-export default function AboutUs() {
+import { Card, CardContent } from "@/components/ui/card";
+import { BtnContact } from "./common/btn-contact";
+
+interface AboutUsProps {
+  idAboutUs: string;
+}
+
+export default function AboutUs({ idAboutUs }: AboutUsProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 py-20">
+    <section
+      className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 py-20"
+      id={idAboutUs}
+    >
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
       <div className="absolute h-96 w-96 -top-48 -left-48 bg-purple-500/30 rounded-full blur-3xl" />
       <div className="absolute h-96 w-96 -bottom-48 -right-48 bg-emerald-500/30 rounded-full blur-3xl" />
@@ -19,7 +27,7 @@ export default function AboutUs() {
           transition={{ duration: 0.5 }}
           className="text-center mb-20"
         >
-          <h1 className="text-4xl  md:text-5xl font-bold mb-4">
+          <h1 className="text-5xl  text-white md:text-5xl font-bold mb-4">
             Sobre <span className="text-emerald-500 test">Nosotros</span>
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto" />
@@ -49,7 +57,6 @@ export default function AboutUs() {
             </Card>
           </motion.div>
 
-          {/* Approach Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +80,6 @@ export default function AboutUs() {
             </Card>
           </motion.div>
 
-          {/* History Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -98,20 +104,13 @@ export default function AboutUs() {
           </motion.div>
         </div>
 
-        {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center"
         >
-          <Button
-            size="lg"
-            className="group bg-gradient-to-r from-emerald-500 to-emerald-700 hover:from-emerald-600 hover:to-emerald-800"
-          >
-            Contáctanos
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <BtnContact title="Contáctanos" />
         </motion.div>
       </div>
     </section>

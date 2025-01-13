@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { BtnContact } from "../components/common/btn-contact";
 
 function OpenPositions() {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +12,6 @@ function OpenPositions() {
       setIsLoading(false);
     }, 2000);
 
-    // Limpiar el temporizador cuando el componente se desmonte
     return () => clearTimeout(timer);
   }, [lookupPosition]);
 
@@ -23,7 +22,7 @@ function OpenPositions() {
 
   return (
     <div className="md:mx-32">
-      <div className="p-5 grid grid-cols-5 gap-1">
+      <div className="p-5 grid grid-cols-5 gap-1 place-items-center">
         <Input
           onChange={(e) => {
             if (e.target.value.trim().length > 0) {
@@ -34,7 +33,7 @@ function OpenPositions() {
           type="text"
           placeholder="Fronted .."
         />
-        <Button className="sm:col-span-1 col-span-5">Buscar</Button>
+        <BtnContact title="Buscar" />
       </div>
       <div className="p-5 h-48">
         {isLoading ? (

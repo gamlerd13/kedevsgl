@@ -14,12 +14,19 @@ import ImageComponent from "./common/Image";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { ServiceType } from "../types/global";
+import { usePathname } from "next/navigation";
 
 interface MenuNavbarProps {
   components: ServiceType[];
 }
 
 export const MenuNavbar = ({ components }: MenuNavbarProps) => {
+  const pathname = usePathname();
+
+  const navigateToAboutUs = () => {
+    return pathname === "/" ? "#about-us" : "/#about-us";
+  };
+
   return (
     <>
       <NavigationMenuItem className="hidden brake:block">
@@ -52,7 +59,7 @@ export const MenuNavbar = ({ components }: MenuNavbarProps) => {
                 </li>
                 <div className="sm:col-span-2 col-span-3">
                   <ListItem
-                    href="/"
+                    href={navigateToAboutUs()}
                     title="About us"
                     className="hover:bg-green-light"
                   >

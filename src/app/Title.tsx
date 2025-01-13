@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { BtnContact } from "./components/common/btn-contact";
 
 function Title() {
   return (
@@ -16,9 +15,7 @@ function Title() {
         </h1>
         <div className="flex justify-center py-8">
           <Link href="/contact" legacyBehavior passHref>
-            <Button>
-              Contactarse <ChevronRight />
-            </Button>
+            <BtnContact title="Contactarse" />
           </Link>
         </div>
       </div>

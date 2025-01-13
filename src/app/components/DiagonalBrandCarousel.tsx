@@ -7,6 +7,9 @@ const brands1 = [
   "/nomadas.jpg",
   "/paraiso.jpg",
   "/enai.jpg",
+  "/business.jpg",
+  "/horse.jpg",
+  "/np-products.jpg",
 ];
 const brands2 = [
   "/adiel.jpg",
@@ -14,6 +17,9 @@ const brands2 = [
   "/nomadas.jpg",
   "/paraiso.jpg",
   "/enai.jpg",
+  "/business.jpg",
+  "/horse.jpg",
+  "/np-products.jpg",
 ];
 
 const DiagonalBrandCarousel: React.FC = () => {

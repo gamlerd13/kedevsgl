@@ -207,8 +207,6 @@ const footer = {
   fontSize: "12px",
 };
 
-// Table
-
 const resetText = {
   margin: "0",
   padding: "0",

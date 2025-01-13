@@ -57,10 +57,10 @@ export default function UserReviews() {
   };
 
   return (
-    <section className="w-full py-12 relative overflow-hidden my-8">
+    <section className="w-full py-12 relative overflow-hidden mb-8 mt-16 bg-gradient-to-b from-emerald-400/40 via-green-500/20 to-transparent rounded-lg">
       <AnimatedBackground />
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-2xl md:text-6xl font-bold text-center mt-8 md:mx-32 my-12">
+        <h2 className="text-2xl md:text-6xl font-bold text-center mt-8  my-12 md:px-10">
           Lo que dicen nuestros
           <span className="text-green-letter"> Clientes</span>
         </h2>
