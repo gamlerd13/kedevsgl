@@ -5,6 +5,7 @@ import { Users, Target, History } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { BtnContact } from "./common/btn-contact";
+import Link from "next/link";
 
 interface AboutUsProps {
   idAboutUs: string;
@@ -110,7 +111,9 @@ export default function AboutUs({ idAboutUs }: AboutUsProps) {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center"
         >
-          <BtnContact title="Contáctanos" />
+          <Link href="/contact">
+            <BtnContact title="Contáctanos" />
+          </Link>
         </motion.div>
       </div>
     </section>
